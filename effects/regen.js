@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast, Damage, EffectFlag, Heal } = require('ranvier');
+const { Damage, EffectFlag, Heal } = require('ranvier');
 
 module.exports = {
   config: {

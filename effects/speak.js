@@ -1,7 +1,5 @@
 'use strict';
 
-const { Broadcast } = require('ranvier');
-
 /**
  * Have an NPC speak phrases over time
  */

@@ -29,10 +29,8 @@ module.exports = {
         }
 
         const poolMax = this.target.getMaxAttribute(regen.pool);
-        const heal = new Heal({
-          attribute: regen.pool,
-          amount: Math.round((poolMax / 10) * regen.modifier),
-          source: this,
+        const amount = Math.round((poolMax / 10) * regen.modifier);
+        const heal = new Heal(regen.pool, amount, this.target, this, {
           hidden: true,
         });
         heal.commit(this.target);
@@ -44,10 +42,8 @@ module.exports = {
           return;
         }
 
-        const drain = new Damage({
-          attribute: 'favor',
-          amount: Math.ceil(this.target.getMaxAttribute('favor') / 10),
-          source: this,
+        const amount = Math.ceil(this.target.getMaxAttribute('favor') / 10);
+        const drain = new Damage('favor', amount, this.target, this, {
           hidden: true
         });
         drain.commit(this.target);
